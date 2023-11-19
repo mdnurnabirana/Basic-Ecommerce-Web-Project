@@ -1,0 +1,49 @@
+Database Name: Ecommerce;
+Table 1: (users)
+	uid Primary	int(11) AUTO_INCREMENT
+	name varchar(50) 	
+	email Index	varchar(100)	
+	mobile Index	varchar(15)	
+	address	varchar(255)	
+	gender	enum('male', 'female')	
+	password	text	
+	profile_picture_url	blob
+	active	tinyint(1)
+	
+table 2: (products)
+	pid Primary	int(11)	AUTO_INCREMENT		
+	pname	varchar(100)		
+	price	decimal(10,2)	
+	image_url	blob
+	category varchar(255)
+	total_quantity int(11)
+	
+table 3: orders
+	orderid Primary	int(11)	AUTO_INCREMENT		
+	uid Index	int(11)	foreign key referencing users(uid) on update cascade on delete cascade		
+	pid Index	int(11)	foreign key referencing products(pid) on update cascade on delete cascade				
+	quantity	int(11)				
+	order_date	timestamp
+	confirmed	tinyint(1)
+
+table 4: admin
+	Primary key varchar(50)		
+	email	varchar(50)
+	pass	text
+
+table 5: payment
+    payid INT(11) AUTO_INCREMENT PRIMARY KEY,
+    mobile VARCHAR(15),
+    method VARCHAR(255),
+    transaction_id VARCHAR(255),
+    date TIMESTAMP,
+    orderid INT(11) REFERENCES orders(orderid) ON UPDATE CASCADE ON DELETE CASCADE
+
+table 6: pending_deliveries
+    delivery_id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    order_id INT(11) REFERENCES orders(orderid) ON UPDATE CASCADE ON DELETE CASCADE,
+    delivery_date DATE,
+    status varchar(50),
+    delivery_address VARCHAR(255),
+    mobile varchar(15)
+	foreign key orderid

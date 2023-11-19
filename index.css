@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "consolas",Poppins, sans-serif; 
+    line-height: 1.3;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #fff;
+    color: #fff;
+    transition: background-color 0.3s;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    transition: color 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo img {
+    width: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.search-box {
+    flex-grow: 0;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.1s ease;
+}
+
+.search-form:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-form input[type="text"] {
+    width: 250px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-form button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #000;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    min-height: 800px;
+}
+
+.product-grid {
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.product-item {
+    flex: 0 1 calc(32% - 190px);
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.quantity-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.quantity-decrement,
+.quantity-increment {
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.quantity-input input {
+    border: none;
+    width: 30px;
+    text-align: center;
+    padding: 0;
+    outline: none;
+}
+
+.product-buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.product-buy input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-buy input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.out-of-stock-container {
+    display: flex;
+    align-items: center;
+}
+
+.out-of-stock {
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-left: 150px; 
+}
+/* 
+.zoom-on-hover {
+    overflow: hidden ;
+}
+*/
+.zoom-on-hover img {
+    transition: transform 0.3s ease; 
+}
+
+.zoom-on-hover:hover img {
+    transform: scale(1.4); 
+}
+
+.fa-magnifying-glass {
+    transition: transform 0.2s ease; 
+}
+
+.fa-magnifying-glass:hover {
+    transform: scale(1.2);
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #4CAF50; 
+    transform: scale(1.1);
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.coming-soon-message {
+    font-size: 80px;
+    text-align: center;
+    animation: bounce 1.5s infinite; 
+    color: #007BFF; 
+    font-weight: bold;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+
+.advertisement {
+    background-color: #fff;
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+    animation: glow 2s infinite alternate, borderAnimation 2s infinite alternate;
+    background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 25%), linear-gradient(-45deg, #f5f5f5 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #f5f5f5 75%), linear-gradient(-45deg, transparent 75%, #f5f5f5 75%); /* Background pattern */
+    background-size: 20px 20px;  /* Box shadow */
+}
+
+.advertisement-content {
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+.advertisement-content p {
+    font-size: 18px;
+    animation: slideUp 1s ease, textAnimation 2s infinite alternate; 
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes textAnimation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes borderAnimation {
+    from {
+        border: 2px solid transparent; 
+    }
+    to {
+        border: 2px solid #837d7d; 
+    }
+}
